@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
 const cors = require('cors');
-const PORT = 8080;
+const PORT = process.env.PORT || 3977;
 
 app.use(cors());
+
+app.get('/', (req, res) => {
+    res.status(200).send({ msg: '¡Hola, Mundoo!'})
+})
 
 app.get('/pokedex', async (req, res) => {
     try {
