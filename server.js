@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
 app.get('/pokedex', async (req, res) => {
     try {
         const limit = 80;
-        //const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
-        const response = await fetch(`https://prueba-test-backend-production.up.railway.app/pokedex`)
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
+        //const response = await fetch(`https://prueba-test-backend-production.up.railway.app/pokedex`)
         const data = await response.json();
 
         const pokemonList = await Promise.all(data.results.map(async (pokemon) => {
